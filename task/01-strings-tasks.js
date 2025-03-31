@@ -54,7 +54,8 @@ function getStringLength(value) {
  *   'John','Doe'      => 'Hello, John Doe!'
  *   'Chuck','Norris'  => 'Hello, Chuck Norris!'
  */
-function getStringFromTemplate(firstName, lastName) {
+function getStringFromTemplate
+(firstName, lastName) {
   return `Hello, ${firstName} ${lastName}!`;
 }
 
@@ -69,7 +70,8 @@ function getStringFromTemplate(firstName, lastName) {
  *   'Hello, Chuck Norris!' => 'Chuck Norris'
  */
 function extractNameFromTemplate(value) {
-  return value.slice(7, -1);
+  const firstWord = 'Hello, '
+  return value.slice(firstWord.length, -1);
 }
 
 
