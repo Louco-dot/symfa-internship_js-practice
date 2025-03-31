@@ -70,8 +70,9 @@ function getStringFromTemplate
  *   'Hello, Chuck Norris!' => 'Chuck Norris'
  */
 function extractNameFromTemplate(value) {
-  const firstWord = 'Hello, '
-  return value.slice(firstWord.length, -1);
+  const TEMPELE_STRING = 'Hello, ';
+  
+  return value.slice(TEMPELE_STRING.length, -1);
 }
 
 
