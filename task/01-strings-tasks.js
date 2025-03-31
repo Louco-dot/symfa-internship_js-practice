@@ -54,7 +54,8 @@ function getStringLength(value) {
  *   'John','Doe'      => 'Hello, John Doe!'
  *   'Chuck','Norris'  => 'Hello, Chuck Norris!'
  */
-function getStringFromTemplate(firstName, lastName) {
+function getStringFromTemplate
+(firstName, lastName) {
   return `Hello, ${firstName} ${lastName}!`;
 }
 
@@ -69,7 +70,9 @@ function getStringFromTemplate(firstName, lastName) {
  *   'Hello, Chuck Norris!' => 'Chuck Norris'
  */
 function extractNameFromTemplate(value) {
-    throw new Error('Not implemented');
+  const TEMPELE_STRING = 'Hello, ';
+  
+  return value.slice(TEMPELE_STRING.length, -1);
 }
 
 
@@ -84,7 +87,7 @@ function extractNameFromTemplate(value) {
  *   'cat'       => 'c'
  */
 function getFirstChar(value) {
-    throw new Error('Not implemented');
+  return value.at(0);
 }
 
 /**
