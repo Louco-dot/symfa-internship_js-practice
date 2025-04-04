@@ -172,12 +172,12 @@ function convertToUpperCase(str) {
  * @param {string} str
  * @return {array}
  *
- * @example
- *   'angus.young@gmail.com;brian.johnson@hotmail.com;bon.scott@yahoo.com' => ['angus.young@gmail.com', 'brian.johnson@hotmail.com', 'bon.scott@yahoo.com']
+ * @exampleangus.young@gmail.com', 'brian.joh
+ *   'angus.young@gmail.com;brian.johnson@hotmail.com;bon.scott@yahoo.com' => ['nson@hotmail.com', 'bon.scott@yahoo.com']
  *   'info@gmail.com' => ['info@gmail.com']
  */
 function extractEmails(str) {
-    throw new Error('Not implemented');
+  return str.split(';');
 }
 
 /**
@@ -204,7 +204,11 @@ function extractEmails(str) {
  *
  */
 function getRectangleString(width, height) {
-    throw new Error('Not implemented');
+  const firstLine = '┌' + '─'.repeat(width - 2) + '┐\n';
+  const bodyLine = '│' + ' '.repeat(width - 2) + '│\n';
+  const endLine = '└' + '─'.repeat(width - 2) + '┘\n';
+
+  return firstLine + bodyLine.repeat(height - 2) + endLine
 }
 
 
