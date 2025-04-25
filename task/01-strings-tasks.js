@@ -172,12 +172,12 @@ function convertToUpperCase(str) {
  * @param {string} str
  * @return {array}
  *
- * @example
- *   'angus.young@gmail.com;brian.johnson@hotmail.com;bon.scott@yahoo.com' => ['angus.young@gmail.com', 'brian.johnson@hotmail.com', 'bon.scott@yahoo.com']
+ * @exampleangus.young@gmail.com', 'brian.joh
+ *   'angus.young@gmail.com;brian.johnson@hotmail.com;bon.scott@yahoo.com' => ['nson@hotmail.com', 'bon.scott@yahoo.com']
  *   'info@gmail.com' => ['info@gmail.com']
  */
 function extractEmails(str) {
-    throw new Error('Not implemented');
+  return str.split(';');
 }
 
 /**
@@ -204,7 +204,11 @@ function extractEmails(str) {
  *
  */
 function getRectangleString(width, height) {
-    throw new Error('Not implemented');
+  const firstLine = '┌' + '─'.repeat(width - 2) + '┐\n';
+  const bodyLine = '│' + ' '.repeat(width - 2) + '│\n';
+  const endLine = '└' + '─'.repeat(width - 2) + '┘\n';
+
+  return firstLine + bodyLine.repeat(height - 2) + endLine
 }
 
 
@@ -224,7 +228,25 @@ function getRectangleString(width, height) {
  *
  */
 function encodeToRot13(str) {
-    throw new Error('Not implemented');
+  let result = '';
+  
+  for (const word of str) {
+    const charCode = word.charCodeAt(0);
+
+    if ((charCode >= 65 && charCode < 78) || (charCode >= 97 && charCode < 110)) {
+      result = result + String.fromCharCode(charCode + 13);
+	  continue;
+    }
+	
+	if ((charCode >= 78 && charCode < 91) || (charCode >= 110 && charCode < 123)) {
+	  result = result + String.fromCharCode(charCode - 13);
+	  continue;
+	}
+	
+	result += word;
+  }
+  
+  return result;
 }
 
 /**
@@ -241,7 +263,7 @@ function encodeToRot13(str) {
  *   isString(new String('test')) => true
  */
 function isString(value) {
-    throw new Error('Not implemented');
+  return value === String(value) || value instanceof String;
 }
 
 
@@ -270,7 +292,11 @@ function isString(value) {
  *   'K♠' => 51
  */
 function getCardId(value) {
-    throw new Error('Not implemented');
+  let card = ['A♣','2♣','3♣','4♣','5♣','6♣','7♣','8♣','9♣','10♣','J♣','Q♣','K♣',
+              'A♦','2♦','3♦','4♦','5♦','6♦','7♦','8♦','9♦','10♦','J♦','Q♦','K♦',
+              'A♥','2♥','3♥','4♥','5♥','6♥','7♥','8♥','9♥','10♥','J♥','Q♥','K♥',
+              'A♠','2♠','3♠','4♠','5♠','6♠','7♠','8♠','9♠','10♠','J♠','Q♠','K♠'];
+  return card.indexOf(value)
 }
 
 
